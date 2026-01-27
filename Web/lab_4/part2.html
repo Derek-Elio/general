@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+
+<p>
+    <form action="https://www2.scs.ryerson.ca/~d2eliopo/cgi-bin/part2.cgi" method="post">
+    <p>First Name: <input type="text" name="firstname"></p>
+    <p>Last Name: <input type="text" name="lastname"></p>
+    <p>Address:</p>
+    <p>Street Name: <input type="text" name="streetname"></p>
+    <p>City: <input type="text" name="city"></p>
+    <p>Postal Code: <input type="text" name="postalcode"></p>
+    <p>Province: <select name="province">
+        <option value="Ontario">Ontario</option>
+        <option value="Quebec">Quebec</option>
+        <option value="Nova Scotia">Nova Scotia</option>
+        <option value="New Brunswick">New Brunswick</option>
+        <option value="Manitoba">Manitoba</option>
+        <option value="British Columbia">British Columbia</option>
+        <option value="Prince Edward Island">Prince Edward Island</option>
+        <option value="Saskatchewan">Saskatchewan</option>
+        <option value="Alberta">Alberta</option>
+        <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+    </select>
+  
+    <p>Gender: <input type="radio" id="Male" name="gender" value="HTML">
+    <label for="Male">Male</label><br>
+    <input type="radio" id="Female" name="gender" value="Female">
+    <label for="Female">Female</label><br>
+    <input type="radio" id="Other" name="gender" value="Other">
+    <label for="Other">Other</label>
+    
+    <p>Phone Number: <input type="text" name="phonenumber"></p>
+    <p>Password: <input type="text" name="password"></p>
+
+    
+    <input type="submit">
+    </form>
+</p>

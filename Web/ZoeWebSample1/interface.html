@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Content Editor</title>
+    <style>
+        /* Base Styling: No external imports, using standard system fonts */
+        body { 
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fb; /* Light background */
+            padding: 16px; 
+        }
+        @media (min-width: 640px) {
+            body { padding: 40px; }
+        }
+
+        .container {
+            max-width: 896px; 
+            margin: 0 auto; 
+            display: flex;
+            flex-direction: column;
+            gap: 32px; 
+        }
+
+        /* Header Styling */
+        .header {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 24px; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-bottom: 4px solid #059669; 
+        }
+        .header h1 {
+            font-size: 36px; 
+            font-weight: 700; 
+            color: #1f2937; 
+        }
+        .header h1 span {
+            color: #059669; 
+        }
+        .header p {
+            font-size: 18px; 
+            color: #4b5563; 
+            margin-top: 8px; 
+        }
+
+        /* Panel Styling (Step 1 and Step 2 containers) */
+        .panel {
+            background-color: #ffffff;
+            padding: 24px; 
+            border-radius: 12px; 
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05); 
+        }
+        .panel h2 {
+            font-size: 24px; 
+            font-weight: 700; 
+            color: #1f2937; 
+            margin-bottom: 16px; 
+            display: flex;
+            align-items: center;
+        }
+        .panel h2 svg {
+            margin-right: 12px; 
+        }
+        .panel p.instruction-text {
+            color: #4b5563;
+        }
+
+        /* Drag & Drop Zone */
+        .drop-zone {
+            border: 2px dashed #9ca3af; 
+            border-radius: 8px; 
+            padding: 20px;
+            text-align: center;
+            color: #4b5563;
+            font-weight: 600;
+            background-color: #f9fafb;
+            transition: background-color 0.2s, border-color 0.2s;
+            cursor: pointer;
+        }
+        .drop-zone.active {
+            border-color: #3b82f6;
+            background-color: #eff6ff; 
+        }
+        .drop-zone:hover {
+            background-color: #f3f4f6;
+        }
+
+
+        /* OR Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 16px 0;
+            color: #9ca3af;
+        }
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #d1d5db;
+        }
+        .divider:not(:empty)::before {
+            margin-right: .5em;
+        }
+        .divider:not(:empty)::after {
+            margin-left: .5em;
+        }
+
+        /* Textarea Input (Paste HTML) */
+        .input-area {
+            width: 100%;
+            padding: 12px; 
+            border: 1px solid #d1d5db; 
+            border-radius: 8px; 
+            font-family: monospace;
+            font-size: 14px; 
+            box-sizing: border-box;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        .input-area:focus {
+            border-color: #3b82f6; 
+            outline: 0;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Primary Button (Load Content - Blue) */
+        .btn-primary {
+            margin-top: 16px; 
+            padding: 12px 32px; 
+            font-weight: 700; 
+            font-size: 18px; 
+            border-radius: 12px; 
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); 
+            background-color: #2563eb; 
+            color: white;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background-color: #1d4ed8; 
+        }
+
+        /* Success Button (Download - Green) */
+        .btn-success {
+            margin-top: 32px; 
+            padding: 16px 32px; 
+            font-weight: 700; 
+            font-size: 18px; 
+            border-radius: 12px; 
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+            background-color: #047857; 
+            color: white;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-success:hover {
+            background-color: #065f46; 
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Loading State */
+        .loading-btn {
+            background-color: #4a5568 !important; 
+            cursor: not-allowed !important;
+            opacity: 0.8;
+        }
+
+        /* Instructions Box */
+        .instructions-box {
+            margin-bottom: 24px; 
+            padding: 16px; 
+            background-color: #fffbeb; 
+            border-left: 4px solid #f59e0b; 
+            color: #92400e; 
+            border-radius: 6px; 
+        }
+        .instructions-box p {
+            font-weight: 600; 
+        }
+        .instructions-box ul {
+            list-style-type: disc;
+            padding-left: 16px; 
+            font-size: 14px; 
+            margin-top: 8px;
+        }
+
+        /* Editor Field Container */
+        .text-field-container {
+            background-color: #f9fafb; 
+            padding: 16px; 
+            border-radius: 8px; 
+            border: 1px solid #e5e7eb; 
+            transition: background-color 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .text-field-container:hover {
+            background-color: #f3f4f6; 
+        }
+
+        /* Editor Label */
+        .text-field-container label {
+            font-size: 14px; 
+            font-weight: 500; 
+            color: #4b5563; 
+            margin-bottom: 8px; 
+            display: block;
+        }
+        .text-field-container label span.preview {
+            font-weight: 600; 
+            color: #1f2937; 
+        }
+
+        /* Editor Textarea */
+        .editor-textarea {
+            width: 100%;
+            padding: 8px; 
+            border: 1px solid #34d399; 
+            border-radius: 6px; 
+            font-size: 16px; 
+            box-sizing: border-box;
+        }
+        .editor-textarea:focus {
+            border-color: #10b981; 
+            outline: 0;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Utility classes used in HTML */
+        .text-center { text-align: center; }
+        .text-gray-500 { color: #6b7280; }
+        .p-8 { padding: 32px; }
+        .space-y-4 > * + * { margin-top: 16px; }
+        .text-red-600 { color: #dc2626; }
+        .bg-red-100 { background-color: #fee2e2; }
+        .rounded-lg { border-radius: 8px; }
+        .mb-4 { margin-bottom: 16px; }
+        .p-3 { padding: 12px; }
+    </style>
+</head>
+<body class="p-4 sm:p-10">
+
+    <div class="container">
+        
+        <header class="header">
+            <h1 class="h1">
+                Website Content <span class="span">Editor</span>
+            </h1>
+            <p class="p">
+                Load your current website HTML to begin editing.
+            </p>
+        </header>
+
+        <!-- Step 1: HTML Input Panel -->
+        <div id="html-input-panel" class="panel">
+            <h2 class="h2">
+                <!-- SVG Icon for Step 1: Red -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-3"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="12" x2="15" y1="12" y2="12"/></svg>
+                Step 1: Load Current Website Code
+            </h2>
+
+            <p class="instruction-text mb-4">
+                You can either **drag and drop** the website file, or copy/paste the code below.
+            </p>
+
+            <!-- Drag & Drop Zone -->
+            <div id="drop-zone" class="drop-zone">
+                Drag and Drop your **.html file** here
+            </div>
+
+            <div class="divider">OR</div>
+
+            <!-- Paste Input Area -->
+            <textarea id="html-input" 
+                      placeholder="Paste your full HTML code here (start with <!DOCTYPE html>...)" 
+                      rows="10" 
+                      class="input-area"></textarea>
+            
+            <button id="load-content-btn" onclick="extractContent()" class="btn-primary">
+                Load Editable Content
+            </button>
+        </div>
+
+
+        <!-- Step 2: Main Editing Panel (Starts Hidden) -->
+        <div id="editing-panel" class="panel" style="display: none;">
+            <h2 class="h2">
+                <!-- SVG Icon for Step 2: Green -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-3"><path d="M12 20h9"/><path d="M16.4 3.6a2.15 2.15 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+                Step 2: Edit Content (<span id="edit-count">0</span> unique items)
+            </h2>
+            
+            <!-- Instructions -->
+            <div class="instructions-box">
+                <p class="p">Instructions:</p>
+                <ul>
+                    <li>Type your changes directly into the text boxes below.</li>
+                    <li>**Do not** use special characters like `<` or `>` (HTML tags).</li>
+                </ul>
+            </div>
+
+            <!-- Editor Container -->
+            <div id="editor-container" class="space-y-4">
+                <p class="text-center text-gray-500 p-8">Content ready for editing will appear here.</p>
+            </div>
+            
+            <!-- Action Button -->
+            <button id="download-btn" onclick="generateAndDownloadHtml()" class="btn-success">
+                Step 3: Download New Website File (.html)
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Global variables for data management
+        let extractedTextData = [];
+        let parsedDoc = null;
+        let originalHtmlString = ''; 
+
+        /**
+         * Utility function to hide/show panels
+         */
+        function togglePanels(isEditingReady) {
+            document.getElementById('html-input-panel').style.display = isEditingReady ? 'none' : 'block';
+            document.getElementById('editing-panel').style.display = isEditingReady ? 'block' : 'none';
+        }
+
+        /**
+         * Core function to process the HTML content, whether pasted or loaded from file.
+         */
+        function processHtmlContent(htmlContent) {
+            const loadBtn = document.getElementById('load-content-btn');
+            
+            // Set loading state
+            loadBtn.textContent = 'Loading...';
+            loadBtn.disabled = true;
+            loadBtn.classList.add('loading-btn');
+            
+            originalHtmlString = htmlContent;
+
+            try {
+                const parser = new DOMParser();
+                parsedDoc = parser.parseFromString(originalHtmlString, 'text/html');
+            } catch (e) {
+                console.error('Failed to parse HTML:', e);
+                document.getElementById('editor-container').innerHTML = '<p class="text-center text-red-600 p-4 bg-red-100 rounded-lg">Error: The code you provided could not be read. Please ensure it is the complete, correct HTML file.</p>';
+                togglePanels(false); 
+                
+                loadBtn.textContent = 'Load Editable Content';
+                loadBtn.disabled = false;
+                loadBtn.classList.remove('loading-btn');
+                return;
+            }
+
+            // --- Tree Traversal Logic ---
+            const treeWalker = document.createTreeWalker(
+                parsedDoc.documentElement,
+                NodeFilter.SHOW_TEXT,
+                {
+                    acceptNode: (node) => {
+                        // Traverse up to filter out text in SCRIPT, STYLE, TITLE, and NAV elements
+                        let parent = node.parentElement;
+                        while (parent) {
+                            const tag = parent.tagName;
+                            if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'TITLE' || tag === 'NAV') { 
+                                return NodeFilter.FILTER_REJECT;
+                            }
+                            parent = parent.parentElement;
+                        }
+                        // Only accept text nodes that contain non-whitespace content
+                        return node.nodeValue.trim().length > 0 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+                    }
+                },
+                false
+            );
+
+            const textNodes = [];
+            let node;
+            while (node = treeWalker.nextNode()) {
+                textNodes.push(node);
+            }
+            
+            // --- Grouping Logic (Collect unique text strings) ---
+            const uniqueTexts = new Map(); 
+            textNodes.forEach(node => {
+                const originalText = node.nodeValue; 
+                const trimmedText = originalText.trim();
+                
+                if (!uniqueTexts.has(trimmedText)) {
+                    uniqueTexts.set(trimmedText, { 
+                        originalText: originalText, 
+                        nodes: [],
+                    });
+                }
+                uniqueTexts.get(trimmedText).nodes.push(node);
+            });
+            
+            extractedTextData = Array.from(uniqueTexts.values());
+            renderEditor();
+            togglePanels(true); // Switch to the editing view
+            
+            // Reset loading state
+            loadBtn.textContent = 'Load Editable Content';
+            loadBtn.disabled = false;
+            loadBtn.classList.remove('loading-btn');
+        }
+
+
+        /**
+         * Triggered by the "Load Editable Content" button (using Paste method).
+         */
+        function extractContent() {
+            const htmlInputArea = document.getElementById('html-input');
+            const htmlContent = htmlInputArea.value;
+            if (htmlContent.trim().length === 0) {
+                document.getElementById('editor-container').innerHTML = '<p class="text-center text-red-600 p-4 bg-red-100 rounded-lg">Please paste the HTML content first.</p>';
+                return;
+            }
+            processHtmlContent(htmlContent);
+        }
+
+        /**
+         * Renders the extracted text content into the simplified editor interface.
+         */
+        function renderEditor() {
+            const editorContainer = document.getElementById('editor-container');
+            editorContainer.innerHTML = '';
+            
+            document.getElementById('edit-count').textContent = extractedTextData.length;
+
+            if (extractedTextData.length === 0) {
+                editorContainer.innerHTML = '<p class="text-center text-gray-500">No editable text content found after filtering.</p>';
+                return;
+            }
+
+            let html = '<div class="space-y-4">';
+            extractedTextData.forEach((item, index) => {
+                // Determine number of rows based on content length for better readability
+                const rows = Math.max(1, Math.min(10, Math.ceil(item.originalText.trim().length / 70)));
+                
+                // Truncate the original text for the label, showing where it was found
+                const preview = item.originalText.trim().substring(0, 80);
+
+                html += `
+                    <div class="text-field-container">
+                        <label for="text-edit-${index}">
+                            Text Found: <span class="preview">${preview.length === 80 ? preview + '...' : preview}</span>
+                        </label>
+                        <textarea id="text-edit-${index}" 
+                                  data-index="${index}"
+                                  class="editor-textarea" 
+                                  rows="${rows}"
+                                  oninput="handleEdit(this)">${item.originalText}</textarea>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            
+            editorContainer.innerHTML = html;
+        }
+
+        /**
+         * Updates the internal data structure with the new text value when an input changes.
+         */
+        function handleEdit(textarea) {
+            const index = parseInt(textarea.dataset.index, 10);
+            extractedTextData[index].newValue = textarea.value;
+        }
+
+        /**
+         * Applies the edited values back to the parsed DOM and triggers a file download.
+         */
+        function generateAndDownloadHtml() {
+            if (!parsedDoc) {
+                // Display error message
+                document.getElementById('editing-panel').insertAdjacentHTML('afterbegin', 
+                    '<div class="p-3 bg-red-100 text-red-600 rounded-lg mb-4">Error: Content not loaded. Please complete Step 1 first.</div>');
+                return;
+            }
+
+            // Apply all changes to the parsed DOM
+            extractedTextData.forEach(item => {
+                const newText = item.newValue !== undefined ? item.newValue : item.originalText;
+                
+                // Apply the new text value to all associated DOM nodes
+                item.nodes.forEach(node => {
+                    node.nodeValue = newText;
+                });
+            });
+
+            // Serialize the modified DOM back to an HTML string
+            const serializer = new XMLSerializer();
+            // This ensures the DOCTYPE is preserved correctly at the start of the file
+            const newHtmlString = '<!DOCTYPE html>\n' + serializer.serializeToString(parsedDoc.documentElement);
+
+            // Create a Blob and initiate download
+            const blob = new Blob([newHtmlString], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'edited_website_file.html'; 
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+
+        // --- DRAG AND DROP LOGIC ---
+
+        const dropZone = document.getElementById('drop-zone');
+        const htmlInputArea = document.getElementById('html-input');
+        const loadButton = document.getElementById('load-content-btn');
+
+        // Prevent default drag behavior on the entire window (important for drag-and-drop to work)
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            document.body.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        // Highlight drop zone when a file is dragged over it
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, () => dropZone.classList.add('active'), false);
+        });
+
+        // Remove highlight when file leaves drop zone
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, () => dropZone.classList.remove('active'), false);
+        });
+
+        dropZone.addEventListener('drop', handleDrop, false);
+
+        /**
+         * Handles the file drop event.
+         */
+        function handleDrop(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            
+            const dt = e.dataTransfer;
+            const files = dt.files;
+
+            if (files.length === 0) return;
+            
+            const file = files[0];
+            
+            // Basic file type check (only accept .html files)
+            if (!file.name.endsWith('.html')) {
+                dropZone.textContent = 'Error: Only HTML (.html) files are accepted. Try again.';
+                dropZone.classList.remove('active');
+                dropZone.style.borderColor = '#dc2626'; // Red border for error
+                setTimeout(() => {
+                    dropZone.textContent = 'Drag and Drop your .html file here';
+                    dropZone.style.borderColor = '#9ca3af';
+                }, 3000);
+                return;
+            }
+
+            // Use FileReader to read the file content as text
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const htmlContent = event.target.result;
+                htmlInputArea.value = htmlContent; // Populate the paste area as well
+                
+                // Immediately process the content from the file
+                processHtmlContent(htmlContent);
+                
+                dropZone.textContent = 'File loaded successfully! Loading content...';
+            };
+            reader.onerror = function() {
+                dropZone.textContent = 'Error reading file.';
+            };
+
+            reader.readAsText(file);
+        }
+
+        // Initialize: Show only the paste panel on load
+        window.addEventListener('load', () => {
+             togglePanels(false);
+        });
+
+    </script>
+</body>
+</html>

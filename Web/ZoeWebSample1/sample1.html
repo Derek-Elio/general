@@ -1,0 +1,415 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooted Mind Therapy - Finding Your Rooted Path</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom Fonts for a Professional Look */
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@400;600;700&display=swap');
+        
+        .font-sans { font-family: 'Inter', sans-serif; }
+        .font-serif { font-family: 'Merriweather', serif; }
+        .container { max-width: 1200px; }
+
+        /* Custom Colors for the Calm Aesthetic */
+        :root {
+            --color-primary: #385e33; /* Dark Green */
+            --color-secondary: #e0e7d5; /* Light Creamy Green */
+        }
+        
+        /* Utility Classes for JS Page Switching */
+        .page-section {
+            display: none;
+        }
+
+
+
+        /* Set base font and color */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #374151; /* Gray-700 */
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.top-0{top:0px}.z-10{z-index:10}.order-1{order:1}.order-2{order:2}.mx-4{margin-left:1rem;margin-right:1rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-10{margin-bottom:2.5rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-4{margin-left:1rem}.mr-2{margin-right:0.5rem}.mt-12{margin-top:3rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-\[60vh\]{height:60vh}.h-auto{height:auto}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-full{width:100%}.max-w-4xl{max-width:56rem}.max-w-5xl{max-width:64rem}.max-w-6xl{max-width:72rem}.flex-grow{flex-grow:1}.cursor-pointer{cursor:pointer}.list-inside{list-style-position:inside}.list-disc{list-style-type:disc}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-12{gap:3rem}.gap-8{gap:2rem}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-6 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1.5rem * var(--tw-space-x-reverse));margin-left:calc(1.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-24 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(6rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(6rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-l-4{border-left-width:4px}.border-t{border-top-width:1px}.border-t-8{border-top-width:8px}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-gray-700{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.border-green-600{--tw-border-opacity:1;border-color:rgb(22 163 74 / var(--tw-border-opacity, 1))}.border-green-700{--tw-border-opacity:1;border-color:rgb(21 128 61 / var(--tw-border-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-green-50{--tw-bg-opacity:1;background-color:rgb(240 253 244 / var(--tw-bg-opacity, 1))}.bg-green-700{--tw-bg-opacity:1;background-color:rgb(21 128 61 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/70{background-color:rgb(255 255 255 / 0.7)}.bg-white\/95{background-color:rgb(255 255 255 / 0.95)}.bg-cover{background-size:cover}.bg-center{background-position:center}.object-cover{object-fit:cover}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-2{padding-bottom:0.5rem}.pb-6{padding-bottom:1.5rem}.pt-10{padding-top:2.5rem}.pt-4{padding-top:1rem}.pt-6{padding-top:1.5rem}.text-center{text-align:center}.font-serif{font-family:ui-serif, Georgia, Cambria, "Times New Roman", Times, serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-green-400{--tw-text-opacity:1;color:rgb(74 222 128 / var(--tw-text-opacity, 1))}.text-green-700{--tw-text-opacity:1;color:rgb(21 128 61 / var(--tw-text-opacity, 1))}.text-green-800{--tw-text-opacity:1;color:rgb(22 101 52 / var(--tw-text-opacity, 1))}.text-green-900{--tw-text-opacity:1;color:rgb(20 83 45 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-80{opacity:0.8}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-shadow{transition-property:box-shadow;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.duration-300{transition-duration:300ms}.hover\:bg-green-50:hover{--tw-bg-opacity:1;background-color:rgb(240 253 244 / var(--tw-bg-opacity, 1))}.hover\:bg-green-800:hover{--tw-bg-opacity:1;background-color:rgb(22 101 52 / var(--tw-bg-opacity, 1))}.hover\:text-green-400:hover{--tw-text-opacity:1;color:rgb(74 222 128 / var(--tw-text-opacity, 1))}.hover\:text-green-700:hover{--tw-text-opacity:1;color:rgb(21 128 61 / var(--tw-text-opacity, 1))}.hover\:text-green-800:hover{--tw-text-opacity:1;color:rgb(22 101 52 / var(--tw-text-opacity, 1))}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-xl:hover{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:border-green-500:focus{--tw-border-opacity:1;border-color:rgb(34 197 94 / var(--tw-border-opacity, 1))}.focus\:ring-green-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(34 197 94 / var(--tw-ring-opacity, 1))}@media (min-width: 640px){.sm\:block{display:block}.sm\:h-\[70vh\]{height:70vh}.sm\:p-12{padding:3rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem}.sm\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 768px){.md\:order-1{order:1}.md\:order-2{order:2}.md\:col-span-1{grid-column:span 1 / span 1}.md\:col-span-2{grid-column:span 2 / span 2}.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:border-l{border-left-width:1px}.md\:border-t-0{border-top-width:0px}.md\:pl-6{padding-left:1.5rem}.md\:pt-0{padding-top:0px}}</style><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.top-0{top:0px}.z-10{z-index:10}.order-1{order:1}.order-2{order:2}.mx-4{margin-left:1rem;margin-right:1rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-10{margin-bottom:2.5rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-4{margin-left:1rem}.mr-2{margin-right:0.5rem}.mt-12{margin-top:3rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-\[60vh\]{height:60vh}.h-auto{height:auto}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-full{width:100%}.max-w-4xl{max-width:56rem}.max-w-5xl{max-width:64rem}.max-w-6xl{max-width:72rem}.flex-grow{flex-grow:1}.cursor-pointer{cursor:pointer}.list-inside{list-style-position:inside}.list-disc{list-style-type:disc}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-12{gap:3rem}.gap-8{gap:2rem}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-6 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1.5rem * var(--tw-space-x-reverse));margin-left:calc(1.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-24 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(6rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(6rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-l-4{border-left-width:4px}.border-t{border-top-width:1px}.border-t-8{border-top-width:8px}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-gray-700{--tw-border-opacity:1;border-color:rgb(55 65 81 / var(--tw-border-opacity, 1))}.border-green-500{--tw-border-opacity:1;border-color:rgb(34 197 94 / var(--tw-border-opacity, 1))}.border-green-600{--tw-border-opacity:1;border-color:rgb(22 163 74 / var(--tw-border-opacity, 1))}.border-green-700{--tw-border-opacity:1;border-color:rgb(21 128 61 / var(--tw-border-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.bg-green-50{--tw-bg-opacity:1;background-color:rgb(240 253 244 / var(--tw-bg-opacity, 1))}.bg-green-700{--tw-bg-opacity:1;background-color:rgb(21 128 61 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/70{background-color:rgb(255 255 255 / 0.7)}.bg-white\/95{background-color:rgb(255 255 255 / 0.95)}.bg-cover{background-size:cover}.bg-center{background-position:center}.object-cover{object-fit:cover}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-2{padding-bottom:0.5rem}.pb-6{padding-bottom:1.5rem}.pt-10{padding-top:2.5rem}.pt-4{padding-top:1rem}.pt-6{padding-top:1.5rem}.text-center{text-align:center}.font-serif{font-family:ui-serif, Georgia, Cambria, "Times New Roman", Times, serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-green-400{--tw-text-opacity:1;color:rgb(74 222 128 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-green-700{--tw-text-opacity:1;color:rgb(21 128 61 / var(--tw-text-opacity, 1))}.text-green-800{--tw-text-opacity:1;color:rgb(22 101 52 / var(--tw-text-opacity, 1))}.text-green-900{--tw-text-opacity:1;color:rgb(20 83 45 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-80{opacity:0.8}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-shadow{transition-property:box-shadow;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.duration-300{transition-duration:300ms}.hover\:bg-green-50:hover{--tw-bg-opacity:1;background-color:rgb(240 253 244 / var(--tw-bg-opacity, 1))}.hover\:bg-green-800:hover{--tw-bg-opacity:1;background-color:rgb(22 101 52 / var(--tw-bg-opacity, 1))}.hover\:text-green-400:hover{--tw-text-opacity:1;color:rgb(74 222 128 / var(--tw-text-opacity, 1))}.hover\:text-green-700:hover{--tw-text-opacity:1;color:rgb(21 128 61 / var(--tw-text-opacity, 1))}.hover\:text-green-800:hover{--tw-text-opacity:1;color:rgb(22 101 52 / var(--tw-text-opacity, 1))}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-xl:hover{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:border-green-500:focus{--tw-border-opacity:1;border-color:rgb(34 197 94 / var(--tw-border-opacity, 1))}.focus\:ring-green-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(34 197 94 / var(--tw-ring-opacity, 1))}@media (min-width: 640px){.sm\:block{display:block}.sm\:h-\[70vh\]{height:70vh}.sm\:p-12{padding:3rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem}.sm\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 768px){.md\:order-1{order:1}.md\:order-2{order:2}.md\:col-span-1{grid-column:span 1 / span 1}.md\:col-span-2{grid-column:span 2 / span 2}.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:border-l{border-left-width:1px}.md\:border-t-0{border-top-width:0px}.md\:pl-6{padding-left:1.5rem}.md\:pt-0{padding-top:0px}}</style></head>
+
+<body class="bg-white min-h-screen">
+    
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-10 bg-white/95 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <h1 class="text-2xl font-serif font-bold text-green-800 cursor-pointer" onclick="navigateTo('home')">Rooted Mind Therapy</h1>
+            <nav class="hidden md:flex space-x-6">
+                <button class="nav-link text-lg font-medium transition-colors duration-200 text-green-700 border-b-2 border-green-700 hover:text-green-800" data-path="home">Home</button>
+                <button class="nav-link text-lg font-medium transition-colors duration-200 text-gray-600 hover:text-green-700" data-path="about">About</button>
+                <button class="nav-link text-lg font-medium transition-colors duration-200 text-gray-600 hover:text-green-700" data-path="services">Services</button>
+                <button class="nav-link text-lg font-medium transition-colors duration-200 text-gray-600 hover:text-green-700" data-path="blog">Blog</button>
+                <button class="nav-link text-lg font-medium transition-colors duration-200 text-gray-600 hover:text-green-700" data-path="contact">Contact</button>
+            </nav>
+            <button onclick="navigateTo('contact')" class="hidden sm:block px-4 py-2 font-semibold rounded-lg transition-all duration-300 shadow-md bg-green-700 text-white hover:bg-green-800 hover:shadow-lg text-sm">
+                Contact Now
+            </button>
+            
+            <!-- Mobile Menu Icon (Placeholder) -->
+            <button class="md:hidden text-green-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow">
+
+        <!-- ---------------- HOME PAGE ---------------- -->
+        <section id="home" class="page-section space-y-24" style="display: block;">
+            
+            <!-- Hero Section -->
+            <div class="relative h-[60vh] sm:h-[70vh] flex items-center justify-center bg-gray-100 overflow-hidden">
+                <div class="absolute inset-0 bg-cover bg-center opacity-80 bg-green-50 py-16"> <!-- <img src="rootBG.png" alt="Lush forest" style="width:100%;"--></div>
+                
+                <div class="relative text-center p-6 max-w-4xl mx-auto backdrop-blur-sm bg-white/70 rounded-xl shadow-2xl">
+                    <h1 class="text-4xl sm:text-6xl font-serif font-extrabold text-green-900 mb-4">
+                        Finding Your Rooted Path
+                    </h1>
+                    <p class="text-xl sm:text-2xl text-gray-700 mb-8">
+                        Compassionate therapy for anxiety, trauma, and personal growth.
+                    </p>
+                    <button onclick="navigateTo('contact')" class="px-6 py-3 font-semibold rounded-lg transition-all duration-300 shadow-md bg-green-700 text-white hover:bg-green-800 hover:shadow-lg text-lg">[Here we'd link it to JaneApp]</button>
+                </div>
+            </div>
+
+            <!-- Welcome & Philosophy -->
+            <div class="container mx-auto px-4 py-8 max-w-6xl">
+                <h2 class="text-3xl sm:text-4xl font-serif text-gray-800 mb-6 font-bold text-center">A Space to Grow</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed mb-4">
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Vitae tortor condimentum lacinia quis vel eros donec ac odio. Ultrices gravida dictum fusce ut placerat orci nulla.
+                        </p>
+                        <button onclick="navigateTo('about')" class="px-6 py-3 font-semibold rounded-lg transition-all duration-300 shadow-md bg-white text-green-700 border border-green-700 hover:bg-green-50 hover:shadow-lg">
+                            Learn More About My Approach
+                        </button>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <img src="rootOffice.jpg" alt="Therapist in a professional, warm office environment" class="w-full h-auto rounded-xl shadow-lg object-cover">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Specialties/Areas of Focus -->
+            <div class="bg-green-50 py-16">
+                <div class="container mx-auto px-4 max-w-6xl">
+                    <h2 class="text-3xl sm:text-4xl font-serif text-gray-800 mb-10 font-bold text-center">I Can Help With</h2>
+                    <div class="grid md:grid-cols-4 gap-8">
+                        <!-- Specialty 1 -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" class="lucide lucide-users w-10 h-10 mx-auto text-green-700 mb-4"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Anxiety &amp; Stress</h3>
+                            <p class="text-gray-600 leading-relaxed text-sm mb-4">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id arcu ac est.
+                            </p>
+                        </div>
+                        <!-- Specialty 2 -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="heart" class="lucide lucide-heart w-10 h-10 mx-auto text-green-700 mb-4"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Relationship Issues</h3>
+                            <p class="text-gray-600 leading-relaxed text-sm mb-4">
+                                Suspendisse potenti. Nullam vel velit eu nunc interdum, et facilisis felis.
+                            </p>
+                        </div>
+                        <!-- Specialty 3 -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="book-open" class="lucide lucide-book-open w-10 h-10 mx-auto text-green-700 mb-4"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Trauma &amp; PTSD</h3>
+                            <p class="text-gray-600 leading-relaxed text-sm mb-4">
+                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.
+                            </p>
+                        </div>
+                        <!-- Specialty 4 -->
+                        <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user-check" class="lucide lucide-user-check w-10 h-10 mx-auto text-green-700 mb-4"><path d="m16 11 2 2 4-4"></path><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Identity Exploration</h3>
+                            <p class="text-gray-600 leading-relaxed text-sm mb-4">
+                                Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ---------------- ABOUT PAGE ---------------- -->
+        <section id="about" class="page-section container mx-auto px-4 py-16 max-w-5xl" style="display: none;">
+            <h2 class="text-3xl sm:text-4xl font-serif text-gray-800 mb-10 font-bold">Meet the Therapist</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="md:col-span-1">
+                    <img src="https://placehold.co/400x500/a3b18a/385e33?text=Professional+Headshot" alt="Professional headshot of the therapist" class="w-full h-auto rounded-xl shadow-lg mb-6">
+                    <h3 class="text-2xl font-semibold text-gray-800">Jane Doe, LMFT</h3>
+                    <p class="text-green-700 mb-4">Licensed Marriage &amp; Family Therapist</p>
+                </div>
+                <div class="md:col-span-2 space-y-6">
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget ante eget ipsum feugiat mollis. Sed pretium quam ut sem elementum, vel sollicitudin elit facilisis. Nam malesuada, nunc vel lacinia pharetra, quam metus vestibulum massa, in interdum ipsum elit vel libero.
+                    </p>
+                    <h2 class="text-2xl font-serif text-gray-800 mb-4 pt-4 border-t border-gray-200 font-bold">My Philosophy</h2>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus at diam vel erat consectetur rhoncus. Nullam eget lectus vel turpis accumsan volutpat. Donec tristique turpis sit amet magna iaculis, vitae bibendum est lacinia. Cras in nibh sit amet turpis dignissim consectetur.
+                    </p>
+                    <h2 class="text-2xl font-serif text-gray-800 mb-4 pt-4 border-t border-gray-200 font-bold">Credentials &amp; Training</h2>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2 ml-4">
+                        <li>Master of Arts in Counseling Psychology, University Name</li>
+                        <li>Licensed in State, License #12345</li>
+                        <li>Certified in Specific Modality (e.g., EMDR, CBT)</li>
+                        <li>Member of Professional Association (e.g., AAMFT)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ---------------- SERVICES PAGE ---------------- -->
+        <section id="services" class="page-section container mx-auto px-4 py-16 max-w-5xl" style="display: none;">
+            <h2 class="text-3xl sm:text-4xl font-serif text-gray-800 mb-10 font-bold">Services &amp; Fees</h2>
+            
+            <!-- Individual Therapy -->
+            <div class="bg-white p-8 rounded-xl shadow-lg mb-8 border-l-4 border-green-600">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3">Individual Therapy (Ages 18+)</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <div class="flex justify-between items-center bg-gray-50 p-4 rounded-lg mt-4">
+                    <p class="font-bold text-lg text-green-800">50-Minute Session</p>
+                    <p class="text-xl font-extrabold text-green-900">$150</p>
+                </div>
+            </div>
+
+            <!-- Couples Therapy -->
+            <div class="bg-white p-8 rounded-xl shadow-lg mb-8 border-l-4 border-green-600">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3">Couples Counseling</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                <div class="flex justify-between items-center bg-gray-50 p-4 rounded-lg mt-4">
+                    <p class="font-bold text-lg text-green-800">75-Minute Session</p>
+                    <p class="text-xl font-extrabold text-green-900">$200</p>
+                </div>
+            </div>
+
+            <!-- Insurance & Payment -->
+            <div class="mt-12 p-6 bg-gray-100 rounded-xl">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Payment &amp; Insurance</h3>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    I am an out-of-network provider. I can provide you with a <strong>superbill</strong> which you can submit to your insurance company for potential reimbursement. Please contact your insurance provider to verify your out-of-network benefits.
+                </p>
+                <ul class="list-disc list-inside text-gray-600 space-y-1 ml-4 mb-6">
+                    <li>Payment is accepted via credit card, HSA, and FSA.</li>
+                    <li>Sliding scale slots may be available; please inquire during consultation.</li>
+                </ul>
+                <button onclick="navigateTo('contact')" class="px-6 py-3 font-semibold rounded-lg transition-all duration-300 shadow-md bg-green-700 text-white hover:bg-green-800 hover:shadow-lg mt-6">
+                    Check Availability
+                </button>
+            </div>
+        </section>
+		<!-- ---------------- BLOG PAGE ---------------- -->
+        <section id="blog" class="page-section container mx-auto px-4 py-16 max-w-5xl" style="display: none;">
+            <h2 class="text-3xl sm:text-4xl font-serif text-gray-800 mb-10 font-bold">Insights &amp; Articles</h2>
+
+            <!-- Blog Post 1 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg mb-6 border-l-4 border-green-500 hover:shadow-xl transition duration-300 cursor-pointer">
+                <p class="text-sm font-medium text-green-600 mb-1">Mental Health | October 25, 2025</p>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">3 Simple Techniques to Manage Acute Anxiety</h3>
+                <p class="text-gray-600 text-sm">
+                    Discover practical, in-the-moment strategies to ground yourself when anxiety strikes.
+                </p>
+            </div>
+            
+            <!-- Blog Post 2 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg mb-6 border-l-4 border-green-500 hover:shadow-xl transition duration-300 cursor-pointer">
+                <p class="text-sm font-medium text-green-600 mb-1">Relationships | September 18, 2025</p>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Improving Communication: The Power of Active Listening</h3>
+                <p class="text-gray-600 text-sm">
+                    Learn how conscious listening can transform your close relationships and reduce conflict.
+                </p>
+            </div>
+            
+            <!-- Blog Post 3 -->
+            <div class="bg-white p-6 rounded-xl shadow-lg mb-6 border-l-4 border-green-500 hover:shadow-xl transition duration-300 cursor-pointer">
+                <p class="text-sm font-medium text-green-600 mb-1">Personal Growth | August 1, 2025</p>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Navigating Burnout: Setting Boundaries for Sustainable Success</h3>
+                <p class="text-gray-600 text-sm">
+                    Practical tips on identifying the signs of burnout and establishing healthy, long-lasting boundaries.
+                </p>
+            </div>
+        </section>
+        <!-- ---------------- CONTACT PAGE ---------------- -->
+        <section id="contact" class="page-section container mx-auto px-4 py-16 max-w-4xl" style="display: none;">
+            <h2 class="text-3xl sm:text-4xl font-serif text-gray-800 mb-10 font-bold">Let's Connect</h2>
+            <div class="bg-white p-8 sm:p-12 rounded-xl shadow-2xl border-t-8 border-green-700">
+                <p class="text-gray-600 leading-relaxed mb-8 text-lg text-center">
+                    The best way to start is by scheduling a free, brief phone consultation.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Contact Form Placeholder -->
+                    <div class="space-y-4">
+                        <input type="text" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500">
+                        <input type="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500">
+                        <input type="tel" placeholder="Phone Number (Optional)" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500">
+                        <textarea placeholder="Tell me briefly why you are seeking therapy..." rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500"></textarea>
+                        <button class="px-6 py-3 font-semibold rounded-lg transition-all duration-300 shadow-md bg-green-700 text-white hover:bg-green-800 hover:shadow-lg w-full">
+                            Submit Consultation Request
+                        </button>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="space-y-6 md:pl-6 border-t md:border-t-0 md:border-l border-gray-200 pt-6 md:pt-0">
+                        <div>
+                            <h4 class="font-semibold text-green-800 flex items-center mb-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="mail" class="lucide lucide-mail w-5 h-5 mr-2"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg> Email</h4>
+                            <p class="text-gray-600">contact@therapistpractice.com</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-green-800 flex items-center mb-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar" class="lucide lucide-calendar w-5 h-5 mr-2"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg> Address</h4>
+                            <p class="text-gray-600">
+                                123 Tranquil Street, Suite 400<br>
+                                Anxiety-Free City, ST 90210
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-green-800 flex items-center mb-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="aperture" class="lucide lucide-aperture w-5 h-5 mr-2"><circle cx="12" cy="12" r="10"></circle><path d="m14.31 8 5.74 9.94"></path><path d="M9.69 8h11.48"></path><path d="m7.38 12 5.74-9.94"></path><path d="M9.69 16 3.95 6.06"></path><path d="M14.31 16H2.83"></path><path d="m16.62 12-5.74 9.94"></path></svg> Practice Hours</h4>
+                            <p class="text-gray-600">
+                                Mon - Thu: 9:00 AM - 5:00 PM<br>
+                                Fri: Telehealth Only
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-12 pt-10 pb-6">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            
+            <!-- Branding -->
+            <div>
+                <h4 class="text-xl font-serif font-bold text-green-400 mb-4">Rooted Mind Therapy</h4>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                    Providing compassionate, evidence-based care in a supportive environment.
+                </p>
+            </div>
+
+            <!-- Navigation Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4 border-b border-gray-700 pb-2">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><button onclick="navigateTo('home')" class="text-sm text-gray-400 hover:text-green-400 transition-colors">Home</button></li>
+                    <li><button onclick="navigateTo('about')" class="text-sm text-gray-400 hover:text-green-400 transition-colors">About</button></li>
+                    <li><button onclick="navigateTo('services')" class="text-sm text-gray-400 hover:text-green-400 transition-colors">Services</button></li>
+                    <li><button onclick="navigateTo('blog')" class="text-sm text-gray-400 hover:text-green-400 transition-colors">Blog</button></li>
+                    <li><button onclick="navigateTo('contact')" class="text-sm text-gray-400 hover:text-green-400 transition-colors">Contact</button></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4 border-b border-gray-700 pb-2">Location</h4>
+                <p class="text-sm text-gray-400">
+                    Virtual and In-Person Sessions Available.<br>123 Street, Suite 420<br>Keswick</p>
+            </div>
+
+            <!-- Social & Legal -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4 border-b border-gray-700 pb-2">Legal</h4>
+                <ul class="space-y-2 mb-4">
+                    <li><a href="#" class="text-sm text-gray-400 hover:text-green-400">Privacy Policy</a></li>
+                    <li><a href="#" class="text-sm text-gray-400 hover:text-green-400">Client Portal</a></li>
+                </ul>
+                <div class="flex space-x-3">
+                    <span class="text-gray-400 hover:text-green-400 transition-colors">in</span>
+                    <span class="text-gray-400 hover:text-green-400 transition-colors">fb</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center text-sm text-gray-500 border-t border-gray-700 mt-6 pt-4 mx-4">
+            © <span id="currentYear">2025</span>Rooted Mind Therapy, LMFT Zoe Eliopoulos. All rights reserved.</div>
+    </footer>
+
+
+    <script>
+        // --- JavaScript for Page Navigation and Initial Setup ---
+        
+        // Sets the current year in the footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Get all page sections and navigation buttons
+        const pageSections = document.querySelectorAll('.page-section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        let currentPage = 'home'; // Default page
+
+        /**
+         * Navigates to a specific page ID, updates the URL hash, and handles styling.
+         * @param {string} pageId - The ID of the page section to display (e.g., 'home', 'about').
+         */
+        function navigateTo(pageId) {
+            currentPage = pageId;
+
+            // 1. Hide all pages
+            pageSections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // 2. Show the target page
+            const targetSection = document.getElementById(pageId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+                window.scrollTo(0, 0); // Scroll to top
+            }
+
+            // 3. Update active navigation link styling
+            navLinks.forEach(link => {
+                if (link.dataset.path === pageId) {
+                    link.classList.add('text-green-700', 'border-b-2', 'border-green-700');
+                    link.classList.remove('text-gray-600');
+                } else {
+                    link.classList.remove('text-green-700', 'border-b-2', 'border-green-700');
+                    link.classList.add('text-gray-600');
+                }
+            });
+
+            // 4. Update the URL hash (optional, but good for back/forward)
+            window.location.hash = '#' + pageId;
+        }
+
+        // Attach event listeners to all navigation buttons
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navigateTo(link.dataset.path);
+            });
+        });
+
+        // Initialize: Check URL hash on load or default to home
+        window.addEventListener('load', () => {
+            // Replace Lucide icons (must be done after DOM loads)
+            lucide.createIcons();
+
+            const initialPage = window.location.hash ? window.location.hash.substring(1) : 'home';
+            navigateTo(initialPage);
+        });
+        
+        // Handle browser back/forward buttons using the hash
+        window.addEventListener('hashchange', () => {
+            const hashPage = window.location.hash ? window.location.hash.substring(1) : 'home';
+            if (hashPage !== currentPage) {
+                navigateTo(hashPage);
+            }
+        });
+    </script>
+
+</body></html>
